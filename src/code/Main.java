@@ -27,15 +27,13 @@ public class Main {
             printMenu();
             switch (CONSOLE.next()) {
                 case "1":
-                    printFirstOption();
-                    resolveFirstOption();
+                    resolveEncryptOption();
                     break;
                 case "2":
-                    printSecondOption();
-                    resolveSecondOption();
+                    resolveDecryptOption();
                     break;
                 case "3":
-                    resolveThirdOption();
+                    resolveBruteforceOption();
                     break;
                 case "4":
                     System.exit(0);
@@ -57,7 +55,8 @@ public class Main {
                 4) Выйти из приложения.""");
     }
 
-    private static void resolveFirstOption() {
+    private static void resolveEncryptOption() {
+        printEncryptOption();
         if (CONSOLE.hasNextInt()) {
             int key = CONSOLE.nextInt();
             try {
@@ -73,7 +72,8 @@ public class Main {
         }
     }
 
-    private static void resolveSecondOption() {
+    private static void resolveDecryptOption() {
+        printDecryptOption();
         if (CONSOLE.hasNextInt()) {
             int key = CONSOLE.nextInt();
             try {
@@ -89,7 +89,7 @@ public class Main {
         }
     }
 
-    private static void resolveThirdOption() {
+    private static void resolveBruteforceOption() {
         for (int i = 0; i < CaesarCipher.getAlphabetSize(); i++) {
             int key = i;
             try {
@@ -107,11 +107,11 @@ public class Main {
         printBrutForceFail("Не найден ключ.");
     }
 
-    private static void printFirstOption() {
+    private static void printEncryptOption() {
         System.out.println("\nВы хотите зашифровать текст. Введите число, которое будет использоваться для шифрования:");
     }
 
-    private static void printSecondOption() {
+    private static void printDecryptOption() {
         System.out.println("\nВы хотите расшифровать текст. Введите число, которое будет использоваться для дешифрования:");
     }
 
