@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class DecryptAction extends CryptoFileAction implements ActionStrategy {
+public class DecryptAction extends CryptoFileTemplateAction implements ActionStrategy {
 
     public DecryptAction(Scanner scanner, String decryptedFilePath, String encryptedFilePath) {
         super(scanner, Path.of(encryptedFilePath), Path.of(decryptedFilePath));

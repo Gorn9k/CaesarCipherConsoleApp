@@ -5,13 +5,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public abstract class CryptoFileAction {
+public abstract class CryptoFileTemplateAction {
 
     protected final Scanner scanner;
     protected final Path sourceFilePath;
     protected final Path targetFilePath;
 
-    protected CryptoFileAction(Scanner scanner, Path sourceFilePath, Path targetFilePath) {
+    protected CryptoFileTemplateAction(Scanner scanner, Path sourceFilePath, Path targetFilePath) {
         this.scanner = scanner;
         this.sourceFilePath = sourceFilePath;
         this.targetFilePath = targetFilePath;
